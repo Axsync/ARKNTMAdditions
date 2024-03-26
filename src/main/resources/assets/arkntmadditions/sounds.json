@@ -1,0 +1,33 @@
+{
+  "vortex_ambient_loop": {
+  "subtitle": "subtitle.tardis.vortex_ambient_loop",
+  "sounds": [
+  {
+  "name": "arkntmadditions:vortex_ambient_loop",
+  "volume": 1.0,
+  "stream": true
+  }
+  ]
+  },
+  "engine_boost_start": {
+    "category": "blocks",
+    "subtitle": "arkntmadditions.engine_powerup",
+    "sounds": [
+        "arkntmadditions:engine_boost_start"
+    ]
+  },
+  "tardis_cant_start": {
+    "category": "blocks",
+    "subtitle": "arkntmadditions.tardis_fail_startup",
+    "sounds": [
+      "arkntmadditions:tardis_cant_start"
+    ]
+  },
+  "power_down": {
+    "category": "blocks",
+    "subtitle": "subtitle.tardis.power_down",
+    "sounds": [
+      "arkntmadditions:power_down"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "itemGroup.arkntmadditions.main": "ARK's NTM Additions",
+  "item.arkntmadditions.upgrades.engine_booster": "Engine Booster Upgrade",
+  "tooltip.part.upgrades/engine_booster.description": "Overclocks TARDIS Engines by 25%",
+  "subtitle.tardis.vortex_ambient_loop": "Vortex Ambient SFX",
+  "subtitle.tardis_fail_startup": "TARDIS Failing to start up.",
+  "subtitle.tardis.power_down": "TARDIS powering off.",
+  "flight_events.arkntmadditions.temporal_hiccup": "WARNING: Temporal Hiccup!",
+  "flight_events.arkntmadditions.power_failure": "WARNING: Power Failure Imminent!",
+  "flight_events.arkntmadditions.dimensional_breach": "WARNING: Dimensional Breach!",
+  "flight_events.arkntmadditions.emergency_landing": "WARNING: Critical System Failure!",
+  "flight_events.arkntmadditions.emergency_landing2": "Executing Emergency Landing..."
+}
