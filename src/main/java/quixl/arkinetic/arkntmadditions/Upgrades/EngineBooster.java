@@ -1,6 +1,7 @@
 package quixl.arkinetic.arkntmadditions.Upgrades;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.Monitor;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.potion.EffectInstance;
@@ -15,6 +16,7 @@ import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.tardis.mod.controls.HandbrakeControl;
+import net.tardis.mod.controls.MonitorControl;
 import net.tardis.mod.controls.ThrottleControl;
 import net.tardis.mod.controls.XControl;
 import net.tardis.mod.misc.Console;
@@ -30,25 +32,24 @@ import net.tardis.mod.world.dimensions.VortexChunkGenerator;
 import quixl.arkinetic.arkntmadditions.ARKNTMAdditions;
 import quixl.arkinetic.arkntmadditions.RegSoundEvents;
 
-public class EngineBooster extends Upgrade implements ITickable
-{
+public class EngineBooster extends Upgrade implements ITickable {
     public boolean isBoosting;
-    public EngineBooster(UpgradeEntry entry, ConsoleTile tile, Class<? extends Subsystem> clazz)
-    {
+    public EngineBooster(UpgradeEntry entry, ConsoleTile tile, Class < ? extends Subsystem > clazz) {
         super(entry, tile, clazz);
         tile.registerTicker(this);
     }
 
-    private void BoostThemEngines(ConsoleTile tile)
-    {
+    private void BoostThemEngines(ConsoleTile tile) {
         isBoosting = true;
-        tile.setDestinationReachedTick((int) (tile.getReachDestinationTick() * 0.75));
-
+        tile.setDestinationReachedTick((int)(tile.getReachDestinationTick() * 0.75));
     }
 
     @Override
     public void tick(ConsoleTile console) {
-
+        /* ! DYNAMIC COORDINATES (NO UPGRADE REQUIRED) */
+        if (console.isInFlight()) {
+            console.setCurrentLocation(console.getCurrentDimension(), console.getPositionInFlight().getPos());
+        }
     }
 
     @Override
@@ -59,7 +60,7 @@ public class EngineBooster extends Upgrade implements ITickable
     @Override
     public void onTakeoff() {
         this.getConsole().getControl(ThrottleControl.class).ifPresent(control -> {
-            if(control.getAmount() == 1F && this.isUsable() && this.isActivated()){
+            if (control.getAmount() == 1F && this.isUsable() && this.isActivated()) {
                 this.getConsole().getLevel().playSound(null, this.getConsole().getBlockPos(), RegSoundEvents.ENGINE_BOOST_START.get(), SoundCategory.PLAYERS, 0.5F, 1F);
                 BoostThemEngines(this.getConsole());
             }
