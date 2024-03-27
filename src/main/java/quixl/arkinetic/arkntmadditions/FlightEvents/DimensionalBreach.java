@@ -24,11 +24,11 @@ import java.util.List;
 
 public class DimensionalBreach extends FlightEvent {
 
-    public DimensionalBreach(FlightEventFactory entry, List<ResourceLocation> controls) {
+    public DimensionalBreach(FlightEventFactory entry, List < ResourceLocation > controls) {
         super(entry, controls);
     }
 
-    public static final Supplier<ArrayList<ResourceLocation>> CONTROLS = () -> Lists.newArrayList(
+    public static final Supplier < ArrayList < ResourceLocation >> CONTROLS = () -> Lists.newArrayList(
             ControlRegistry.THROTTLE.get().getRegistryName(),
             ControlRegistry.DIMENSION.get().getRegistryName()
     );
