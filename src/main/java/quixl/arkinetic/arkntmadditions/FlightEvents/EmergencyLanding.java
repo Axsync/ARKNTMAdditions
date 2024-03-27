@@ -1,28 +1,18 @@
 package quixl.arkinetic.arkntmadditions.FlightEvents;
 
 import com.google.common.collect.Lists;
-import net.minecraft.client.audio.Sound;
-import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
-import net.minecraft.util.text.TranslationTextComponent;
-import net.tardis.mod.Tardis;
 import net.tardis.mod.flight.FlightEvent;
 import net.tardis.mod.flight.FlightEventFactory;
-import net.tardis.mod.misc.Console;
-import net.tardis.mod.misc.CrashType;
 import net.tardis.mod.misc.CrashTypes;
 import net.tardis.mod.registries.ControlRegistry;
 import net.tardis.mod.tileentities.ConsoleTile;
-import net.tardis.mod.tileentities.console.misc.IAlarmType;
-import net.tardis.mod.tileentities.console.misc.MonitorOverride;
 import quixl.arkinetic.arkntmadditions.RegSoundEvents;
 
 import java.util.ArrayList;
-import java.util.function.Supplier;
-
-import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 
 
 public class EmergencyLanding extends FlightEvent {
@@ -30,13 +20,6 @@ public class EmergencyLanding extends FlightEvent {
     public EmergencyLanding(FlightEventFactory entry, List<ResourceLocation> controls) {
         super(entry, controls);
     }
-
-//    private void initialize(ConsoleTile tile) {
-//        List<String> list = new ArrayList<>();
-//        list.add(new TranslationTextComponent("flight_events.arkntmadditions.emergency_landing").getString());
-//        list.add(new TranslationTextComponent("flight_events.arkntmadditions.emergency_landing2").getString());
-//        tile.getInteriorManager().setMonitorOverrides(new MonitorOverride(tile, 100, list));
-//    }
 
     public static final Supplier<ArrayList<ResourceLocation>> CONTROLS = () -> Lists.newArrayList(
 
