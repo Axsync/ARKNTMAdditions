@@ -22,7 +22,7 @@ public class Config {
 
         public Common(ForgeConfigSpec.Builder builder) {
 
-            TemporalHiccupRarity = builder.comment("How frequent Temporal Hiccup happens.")
+            TemporalHiccupRarity = builder.comment("How frequent Temporal Hiccups happens.")
                     .translation("config.arkntmadditions.TemporalHiccupRarity")
                     .defineInRange("TemporalHiccupRarity", 10, 0, 100);
 
