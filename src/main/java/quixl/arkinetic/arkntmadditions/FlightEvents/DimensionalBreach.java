@@ -1,25 +1,17 @@
 package quixl.arkinetic.arkntmadditions.FlightEvents;
 
 import com.google.common.collect.Lists;
-import net.minecraft.client.audio.Sound;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.tardis.mod.flight.FlightEvent;
 import net.tardis.mod.flight.FlightEventFactory;
-import net.tardis.mod.misc.CrashType;
 import net.tardis.mod.misc.CrashTypes;
-import net.tardis.mod.misc.SpaceTimeCoord;
 import net.tardis.mod.registries.ControlRegistry;
-import net.tardis.mod.registries.ProtocolRegistry;
 import net.tardis.mod.tileentities.ConsoleTile;
-import net.tardis.mod.tileentities.console.misc.DistressSignal;
-import net.tardis.mod.tileentities.console.misc.IAlarmType;
 import quixl.arkinetic.arkntmadditions.RegSoundEvents;
 
 import java.util.ArrayList;
 import java.util.function.Supplier;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class DimensionalBreach extends FlightEvent {
