@@ -22,11 +22,6 @@ public class Config {
 
         public Common(ForgeConfigSpec.Builder builder) {
 
-
-//            VectorErrorRarity = builder.comment("Changes the rarity of the Vector Calculation Error, 0-100")
-//                    .translation("config.tadditions.VectorErrorRarity")
-//                    .defineInRange("VectorErrorRarity", 15, 0, 100);
-
             TemporalHiccupRarity = builder.comment("How frequent Temporal Hiccup happens.")
                     .translation("config.arkntmadditions.TemporalHiccupRarity")
                     .defineInRange("TemporalHiccupRarity", 10, 0, 100);
