@@ -32,6 +32,7 @@ public class EmergencyLanding extends FlightEvent {
     public boolean onComplete(ConsoleTile tile) {
         boolean success = super.onComplete(tile);
         if(success) {
+            tile.getLevel().playSound(null, tile.getBlockPos(), RegSoundEvents.TARDIS_CANT_START.get(), SoundCategory.PLAYERS, 1F, 1F);
             tile.damage(10F);
             tile.crash(CrashTypes.DEFAULT);
             tile.updateClient();
