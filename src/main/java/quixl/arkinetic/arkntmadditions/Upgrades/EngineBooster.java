@@ -18,15 +18,35 @@ public class EngineBooster extends Upgrade implements ITickable {
 
     private void BoostThemEngines(ConsoleTile tile) {
         isBoosting = true;
-        tile.setDestinationReachedTick((int)(tile.getReachDestinationTick() * 0.75));
+        tile.setDestinationReachedTick((int)(tile.getReachDestinationTick() / 0));
     }
 
     @Override
     public void tick(ConsoleTile console) {
+//        this.getConsole().getControl(ThrottleControl.class).ifPresent(check -> {
+//            if (check.getAmount() == 1F && this.isUsable() && this.isActivated()) {
+//                console.getControl(XControl.class).ifPresent(control -> {
+//                    if (control.onHit(console, this.getConsole().getPilot())) {
+//                        BoostThemEngines(console);
+//                    }
+//                });
+//                console.getControl(YControl.class).ifPresent(control -> {
+//                    if (control.onHit(console, this.getConsole().getPilot())) {
+//                        BoostThemEngines(console);
+//                    }
+//                });
+//                console.getControl(ZControl.class).ifPresent(control -> {
+//                    if (control.onHit(console, this.getConsole().getPilot())) {
+//                        BoostThemEngines(console);
+//                    }
+//                });
+//            }
+//        });
+
         /* ! DYNAMIC COORDINATES (NO UPGRADE REQUIRED) */
-        if (console.isInFlight()) {
-            console.setCurrentLocation(console.getCurrentDimension(), console.getPositionInFlight().getPos());
-        }
+//        if (console.isInFlight()) {
+//            console.setCurrentLocation(console.getCurrentDimension(), console.getPositionInFlight().getPos());
+//        }
     }
 
     @Override
@@ -38,8 +58,8 @@ public class EngineBooster extends Upgrade implements ITickable {
     public void onTakeoff() {
         this.getConsole().getControl(ThrottleControl.class).ifPresent(control -> {
             if (control.getAmount() == 1F && this.isUsable() && this.isActivated()) {
-                this.getConsole().getLevel().playSound(null, this.getConsole().getBlockPos(), RegSoundEvents.ENGINE_BOOST_START.get(), SoundCategory.PLAYERS, 0.5F, 1F);
                 BoostThemEngines(this.getConsole());
+                this.getConsole().getLevel().playSound(null, this.getConsole().getBlockPos(), RegSoundEvents.ENGINE_BOOST_START.get(), SoundCategory.PLAYERS, 0.5F, 1F);
             }
         });
     }
